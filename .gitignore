@@ -1,0 +1,16 @@
+*__pycache__
+*.DS_Store
+.vscode
+*launch.json
+*.env
+*.pyc
+mypy.ini
+todo
+venv
+.venv
+*.egg-info
+*.whl
+*.gz
+*.ipynb_checkpoints
+data/
+results/
