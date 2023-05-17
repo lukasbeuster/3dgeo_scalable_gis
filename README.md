@@ -37,8 +37,8 @@ First you need to connect to eh Spider server, based on the instructions that yo
 
 The you need to clone this repo in the server by :
 
-```
-git clone git@github.com:lukasbeuster/3dgeo_scalable_gis.git
+```bash
+git clone https://github.com/lukasbeuster/3dgeo_scalable_gis.git
 ```
 
 then:
