@@ -16,8 +16,6 @@ git clone https://github.com/lukasbeuster/3dgeo_scalable_gis.git
 
 Change directories to where you stored the repository (if not already there). Then make the virtual environment & install dependencies. 
 
-You can change the name of the repository by replacing 'taxonomy' with your own name.
-
 ```bash
 python3 -m venv .taxonomy
 source .taxonomy/bin/activate
