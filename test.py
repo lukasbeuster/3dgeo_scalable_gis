@@ -27,7 +27,8 @@ from sklearn.mixture import GaussianMixture
 import owslib.wfs
 
 
-path_to_data = '/project/stursdat/Data/ScalableGIS/Part1/'
+import os
+path_to_data = os.environ["SCALABLE_GIS_DATA_PATH"]
 
 ams = gpd.read_file(path_to_data + 'AMS_Buurten_lnglat.json').to_crs(28992)
 # ams = ams.loc[(ams['Stadsdeelcode']  == 'A')] # Amsterdam center
