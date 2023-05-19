@@ -7,25 +7,23 @@ Prerequisites: Python 3.8  or higher
 
 If you want to try running the code on your own machine, you need to first create a virtual environment and install the requirements. 
 
-First install MPICH, on a Mac:
+First make sure you've cloned the repository to your local machine.
 
 ```bash
-brew install mpich 
-```
-or on Linux:
-```bash
-sudo apt install python3-mpi4py
+git clone https://github.com/lukasbeuster/3dgeo_scalable_gis.git
 ```
 
 
-Then make the virtual environment & install dependencies
+Change directories to where you stored the repository (if not already there). Then make the virtual environment & install dependencies. 
+
+You can change the name of the repository by replacing 'taxonomy' with your own name.
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
+python3 -m venv .taxonomy
+source .taxonomy/bin/activate
 pip install -r requirements.txt
 ```
-Then you can fire up the notebooks by running:
+Then you can fire up jupyterlab and the notebooks by running:
 
 ```bash
 export SCALABLE_GIS_DATA_PATH='../data/raw_data/'
