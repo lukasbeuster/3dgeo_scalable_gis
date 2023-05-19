@@ -1,3 +1,16 @@
+import warnings 
+
+import mapclassify
+import libpysal
+import momepy as mm
+import numpy as np
+import pandas as pd
+import scipy as sp
+import dask
+from dask.distributed import Client
+from dask import delayed
+from dask.diagnostics import ProgressBar
+from tqdm.auto import tqdm
 
 
 def _theil(y):
@@ -26,8 +39,8 @@ def _simpson_di(data):
     return sum(p(n, N) ** 2 for n in data.values() if n != 0)
 
 
-def get_contextual_characteristics_for_buildings(primary,spatial_weights, serial=False, n_workers=4)
-    
+def get_contextual_characteristics_for_buildings(primary, buildings, spatial_weights, serial=False, n_workers=4):
+    print('Contextual characteristics being calculated!')
     gdf = primary.set_index('uID')
     unique_id = 'uID'
     
@@ -74,7 +87,7 @@ def get_contextual_characteristics_for_buildings(primary,spatial_weights, serial
     for c in natural:
         bins[c] = mapclassify.gadf(gdf[c], method='NaturalBreaks')[1].bins
         
-    if serial == TRUE:
+    if serial:
         for index in tqdm(gdf.index):
             neighbours = [index]
             neighbours += spatial_weights.neighbors[index]
@@ -156,6 +169,7 @@ def get_contextual_characteristics_for_buildings(primary,spatial_weights, serial
     data = contextual.copy()
     data = data.loc[data.index.isin(building_ids)]
     
+    print('Calculation done!')
     return data
 
         
