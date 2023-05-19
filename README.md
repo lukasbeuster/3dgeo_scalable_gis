@@ -9,11 +9,11 @@ If you want to try running the code on your own machine, you need to first creat
 
 First install MPICH, on a Mac:
 
-```
+```bash
 brew install mpich 
 ```
 or on Linux:
-```
+```bash
 sudo apt install python3-mpi4py
 ```
 
@@ -28,8 +28,8 @@ pip install -r requirements.txt
 Then you can fire up the notebooks by running:
 
 ```bash
-export SCALABLE_GIS_DATA_PATH = '../data/raw_data/'
-jupyter notebook
+export SCALABLE_GIS_DATA_PATH='../data/raw_data/'
+jupyter lab
 ```
 
 # Working on the server. 
@@ -55,7 +55,7 @@ Then run the test file:
 
 ```bash
 cd 3dgeo_scalable_gis
-export SCALABLE_GIS_DATA_PATH = '/project/stursdat/Data/ScalableGIS/Part1/'
+export SCALABLE_GIS_DATA_PATH='/project/stursdat/Data/ScalableGIS/Part1/'
 python3 test.py
 ```
  
