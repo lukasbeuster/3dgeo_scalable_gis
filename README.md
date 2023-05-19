@@ -52,7 +52,7 @@ with this (make sure that the keypath is actually the path to you ssh key):
 platform = spider
 host = spider.surf.nl
 user = stursdat-30
-keypath = /Users/lukas/.ssh/rsa_stursdat_30
+keypath = /Users/YOURUSER/.ssh/rsa_stursdat_30
 
 
 Then:

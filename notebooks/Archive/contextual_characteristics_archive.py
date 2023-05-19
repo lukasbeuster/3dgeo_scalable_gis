@@ -39,7 +39,7 @@ def _simpson_di(data):
     return sum(p(n, N) ** 2 for n in data.values() if n != 0)
 
 
-def get_contextual_characteristics_for_buildings(primary, buildings, spatial_weights, client, serial=False):
+def get_contextual_characteristics_for_buildings(primary, buildings, spatial_weights, serial=False, n_workers=4):
     print('Contextual characteristics being calculated!')
     gdf = primary.set_index('uID')
     unique_id = 'uID'
@@ -106,9 +106,11 @@ def get_contextual_characteristics_for_buildings(primary, buildings, spatial_wei
                 sample_bins = mapclassify.UserDefined(values_list, list(bins[ch]))
                 counts = dict(zip(bins[ch], sample_bins.counts))
                 simpsons[ch].append(_simpson_di(counts))
-    else:  
-        client=client
-        print(client)
+    else:
+        client = Client(n_workers=n_workers)
+        print('Dask Dashboard: http://127.0.0.1:8787/status')
+        
+        
         # Create delayed computation for all characteristics
         @delayed
         def compute_characteristics(subset, bins):
