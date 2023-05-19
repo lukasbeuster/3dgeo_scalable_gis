@@ -1,0 +1,12 @@
+Shapely
+momepy
+mapclassify
+seaborn
+scipy
+geopandas
+folium
+mpi4py
+jupyterlab
+ipywidgets
+dask[complete]
+owslib
