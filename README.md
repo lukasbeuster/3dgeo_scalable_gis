@@ -28,30 +28,38 @@ export SCALABLE_GIS_DATA_PATH='../data/raw_data/'
 jupyter lab
 ```
 
-# Working on the server. 
+# Working on the server.
 
-First you need to connect to eh Spider server, based on the instructions that you can find [here]().
-
-Then you need to clone this repo in the server by :
-
-```bash
-git clone https://github.com/lukasbeuster/3dgeo_scalable_gis.git
+From you home directory, run the following:
+```
+git clone http://github.com/RS-DAT/JupyterDaskOnSLURM.git
+cd JupyterDaskOnSLURM
+python3 -m venv .venv
+source .venv/bin/activate
+pip install fabric decorator
 ```
 
-then activate the environment:
+
+Then either run :
 
 ```
-/project/stursdat/Software/mambaforge/bin/conda init
-mamba init
-source ~/.bashrc
-conda activate jupyter_dask
+python runJupyterDaskOnSLURM.py --add_platform
+```
+or just substitute the  info on  config/platforms/platforms.ini
+with this (make sure that the keypath is actually the path to you ssh key):
+
+[spider]
+platform = spider
+host = spider.surf.nl
+user = stursdat-30
+keypath = /Users/lukas/.ssh/rsa_stursdat_30
+
+
+Then:
+
+```
+python runJupyterDaskOnSLURM.py --uid spider --mode run
 ```
 
-Then run the test file:
-
-```bash
-cd 3dgeo_scalable_gis
-export SCALABLE_GIS_DATA_PATH='/project/stursdat/Data/ScalableGIS/Part1/'
-python3 test.py
-```
+And for the password: scalablegis
  
