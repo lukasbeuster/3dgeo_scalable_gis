@@ -1,11 +1,20 @@
-# Calculate floor area with simple assumption of standard floor height of 2.65m
+
+
+import warnings
+
+# Mute specific types of warnings
+warnings.filterwarnings("ignore", category=RuntimeWarning)
+warnings.filterwarnings("ignore", category=UserWarning)
+
+
 import momepy as mm
 import libpysal
 
 
 def get_primary_characteristics_for_buildings(buildings, tessellation, blocks, streets) -> None:
     print('Primary characteristics being calculated!')
-
+    
+    # Calculate floor area with simple assumption of standard floor height of 2.65m
     # print('Calculating Floor Area \n')
     buildings['floor_area'] = (buildings["height_70p"] / 2.65) * buildings.area
 
