@@ -1,5 +1,5 @@
 # Workshop on Scalable GIS - 3D Geoinformation Use Case
-
+Based on the insightful paper and code by Fleischmann et al. -> https://github.com/martinfleis/numerical-taxonomy-paper
 
 # Local installation
 
