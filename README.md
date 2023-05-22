@@ -1,4 +1,4 @@
-# 3dgeo_scalable_gis
+# Workshop on Scalable GIS - 3D Geoinformation Use Case
 
 
 # Local installation
