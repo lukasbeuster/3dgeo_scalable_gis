@@ -1,5 +1,7 @@
 # Workshop on Scalable GIS - 3D Geoinformation Use Case
-Based on the insightful paper and code by Fleischmann et al. -> https://github.com/martinfleis/numerical-taxonomy-paper
+Based on the insightful paper and code by Fleischmann et al. (2021) -> https://github.com/martinfleis/numerical-taxonomy-paper
+
+> Fleischmann M, Feliciotti A, Romice O and Porta S (2021) Methodological Foundation of a Numerical Taxonomy of Urban Form. Environment and Planning B: Urban Analytics and City Science, doi: 10.1177/23998083211059835
 
 # Local installation
 
